@@ -8,7 +8,7 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=15, decimal_places=2, default=99.99)
 
 
-    def __init__(self):
+    def __init__(self): 
         return self.title
 
     @property
