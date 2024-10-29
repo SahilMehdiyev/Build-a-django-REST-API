@@ -5,6 +5,24 @@ shell:
 create_superuser:
 	poetry run python manage.py createsuperuser
 
+run_detail:
+	poetry run python py_client/detail.py
+
+run_basic:
+	poetry run python py_client/basic.py	
+
+run_list:
+	poetry run python py_client/list.py
+
+run_update:
+	poetry run python py_client/update.py
+
+run_create:
+	poetry run python py_client/create.py
+
+run_not_found:
+	poetry run python py_client/not_found.py
+
 run_migrate:
 	poetry run python manage.py migrate
 run_makemigrations:
