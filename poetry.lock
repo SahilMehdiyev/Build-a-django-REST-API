@@ -160,6 +160,16 @@ argon2 = ["argon2-cffi (>=19.1.0)"]
 bcrypt = ["bcrypt"]
 
 [[package]]
+name = "django-admin-soft-dashboard"
+version = "1.0.22"
+description = "Modern template for Django admin interface - Soft Dashboard Design"
+optional = false
+python-versions = "*"
+files = [
+    {file = "django-admin-soft-dashboard-1.0.22.tar.gz", hash = "sha256:13768d1616430d293d17feb365c35ba38e05f8d9ac038d80bbe174ae256c094d"},
+]
+
+[[package]]
 name = "django-cors-headers"
 version = "4.6.0"
 description = "django-cors-headers is a Django application for handling the server headers required for Cross-Origin Resource Sharing (CORS)."
@@ -173,6 +183,47 @@ files = [
 [package.dependencies]
 asgiref = ">=3.6"
 django = ">=4.2"
+
+[[package]]
+name = "django-jazzmin"
+version = "3.0.1"
+description = "Drop-in theme for django admin, that utilises AdminLTE 3 & Bootstrap 4 to make yo' admin look jazzy"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "django_jazzmin-3.0.1-py3-none-any.whl", hash = "sha256:12a0a4c1d4fd09c2eef22acf6a1f03112b515ba695c59faa8ea80efc81c1f21b"},
+    {file = "django_jazzmin-3.0.1.tar.gz", hash = "sha256:67ae148bade41267a09ca8e4352ddefa6121795ebbac238bb9a6564ff841eb1b"},
+]
+
+[package.dependencies]
+django = ">=4.2"
+
+[[package]]
+name = "django-jet-reboot"
+version = "1.3.1"
+description = "Modern template for Django admin interface with improved functionality"
+optional = false
+python-versions = "*"
+files = [
+    {file = "django-jet-reboot-1.3.1.tar.gz", hash = "sha256:616e14435cd7b994ace28c7c251ecf908c3d9f1851a012b4bc20b0a176c94b1c"},
+]
+
+[package.dependencies]
+Django = "*"
+
+[[package]]
+name = "django-unfold"
+version = "0.42.0"
+description = "Modern Django admin theme for seamless interface development"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "django_unfold-0.42.0-py3-none-any.whl", hash = "sha256:474bfe0ba69f2590b475f343dfb2462b5618b87fe4084e80bb6dd1abb0514c40"},
+    {file = "django_unfold-0.42.0.tar.gz", hash = "sha256:1c0a3cb142972d0f7222987e82991899d369b0b19126eaad296a9aabe43337c4"},
+]
+
+[package.dependencies]
+django = ">=3.2"
 
 [[package]]
 name = "djangorestframework"
@@ -286,6 +337,17 @@ socks = ["PySocks (>=1.5.6,!=1.5.7)"]
 use-chardet-on-py3 = ["chardet (>=3.0.2,<6)"]
 
 [[package]]
+name = "six"
+version = "1.16.0"
+description = "Python 2 and 3 compatibility utilities"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*"
+files = [
+    {file = "six-1.16.0-py2.py3-none-any.whl", hash = "sha256:8abb2f1d86890a2dfb989f9a77cfcfd3e47c2a354b01111771326f8aa26e0254"},
+    {file = "six-1.16.0.tar.gz", hash = "sha256:1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"},
+]
+
+[[package]]
 name = "sqlparse"
 version = "0.5.2"
 description = "A non-validating SQL parser."
@@ -331,4 +393,4 @@ zstd = ["zstandard (>=0.18.0)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "ad96757be72bfdf6762a17ddf119ee750bc447f822c342ee1f21756385c60f0a"
+content-hash = "50c946d7e478dc8a5fcc78ec8fba4bce51920e129428596859c0214531ff3c2b"
