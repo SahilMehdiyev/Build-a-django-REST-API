@@ -18,18 +18,19 @@ class ProductListCreateAPIView(generics.ListCreateAPIView):
     permission_classes = [permissions.DjangoModelPermissions]
     
     def perform_create(self,serializer):
+        # email = serializer.validated_data.pop('email')
+        # print(email)
         title = serializer.validated_data.get('title')
-        content = serializer.validated_data.get('content')
-        
+        content = serializer.validated_data.get('content') or None
         if content is None:     
             content = title
-        serializer.save(content=content)
+        serializer.save(content=content)  
 
 class ProductDetailAPIView(generics.RetrieveAPIView):
     
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
-    lookup_field = 'id' 
+    lookup_field = 'pk'
     
 
 class ProductUpdateAPIView(generics.UpdateAPIView):
