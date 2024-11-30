@@ -1,12 +1,10 @@
 from rest_framework import generics, mixins
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-# from django.http import Http404
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_list_or_404, get_object_or_404
 from api.mixins import (
     StaffEditorPermissionMixin,
     UserQuerySetMixin)
-
 from .models import Product
 from .serializers import ProductSerializer
 
