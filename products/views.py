@@ -1,30 +1,39 @@
-from django.http import Http404
-from rest_framework import generics,mixins,permissions,authentication
-from .models import Product
+from rest_framework import generics, mixins
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from django.shortcuts import get_list_or_404
-from.serializers import ProductSerializer
-from .permissions import IsStaffEditorPermission
+# from django.http import Http404
+from django.shortcuts import get_object_or_404
+from api.mixins import (
+    StaffEditorPermissionMixin,
+    UserQuerySetMixin)
+
+from .models import Product
+from .serializers import ProductSerializer
 
 
-class ProductListCreateAPIView(generics.ListCreateAPIView):
+class ProductListCreateAPIView(
+    UserQuerySetMixin,
+    StaffEditorPermissionMixin,
+    generics.ListCreateAPIView):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
-    authentication_classes = [
-        authentication.SessionAuthentication,
-        authentication.TokenAuthentication,
-    ]
-    permission_classes = [permissions.DjangoModelPermissions]
-    
-    def perform_create(self,serializer):
-        # email = serializer.validated_data.pop('email')
-        # print(email)
+
+    def perform_create(self, serializer):
+        # serializer.save(user=self.request.user)
         title = serializer.validated_data.get('title')
         content = serializer.validated_data.get('content') or None
-        if content is None:     
+        if content is None:
             content = title
-        serializer.save(content=content)  
+        serializer.save(user=self.request.user, content=content)
+        # send a Django signal
+    
+    def get_queryset(self, *args, **kwargs):
+        qs = super().get_queryset(*args, **kwargs)
+        request = self.request
+        user = request.user
+        if not user.is_authenticated:
+            return Product.objects.none()
+        return qs.filter(user=request.user)
 
 class ProductDetailAPIView(generics.RetrieveAPIView):
     
