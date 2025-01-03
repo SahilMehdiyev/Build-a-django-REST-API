@@ -45,7 +45,21 @@ INSTALLED_APPS = [
     "rest_framework.authtoken",
     "api",
     "products",
+    "search",
 ]
+
+REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        "rest_framework.authentication.SessionAuthentication",
+         "api.authentication.TokenAuthentication",
+         "rest_framework_simplejwt.authentication.JWTAuthentication",
+    ],
+    "DEFAULT_PERMISSION_CLASSES": [
+        "rest_framework.permissions.IsAuthenticatedOrReadOnly"
+    ],
+    "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.LimitOffsetPagination",
+    "PAGE_SIZE": 10
+}
 
 
 LOGIN_REDIRECT_URL = "/"
