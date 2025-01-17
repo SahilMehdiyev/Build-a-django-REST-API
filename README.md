@@ -46,3 +46,102 @@ This project is built using Django and Django REST Framework (DRF) to provide a 
 ├── pyproject.toml        # Poetry configuration file
 ├── .gitignore            # Git ignore rules
 └── README.md             # Project documentation
+
+
+
+## Installation
+
+Follow these steps to set up the project locally:
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/SahilMehdiyev/Build-a-django-REST-API.git
+   cd Build-a-django-REST-API
+   ```
+
+2. **Install dependencies using Poetry**:
+   ```bash
+   poetry install
+   ```
+
+3. **Set up the environment**:
+   - Create a `.env` file in the project root directory and add necessary environment variables.
+   - Refer to `.env.example` for guidance.
+
+4. **Run Docker containers**:
+   Use Docker to start required services like the database:
+   ```bash
+   docker-compose up -d
+   ```
+
+5. **Apply database migrations**:
+   ```bash
+   poetry run python manage.py migrate
+   ```
+
+6. **Create a superuser** (optional, for accessing the Django admin interface):
+   ```bash
+   poetry run python manage.py createsuperuser
+   ```
+
+7. **Start the development server**:
+   ```bash
+   poetry run python manage.py runserver
+   ```
+
+---
+
+## Usage
+
+Once the server is running, you can:
+
+- Access API endpoints to interact with the system.
+- Test CRUD operations on various models like `products` and `search`.
+- Use the Django admin interface for management.
+
+---
+
+## Testing
+
+Run the tests using Pytest:
+
+```bash
+poetry run pytest
+```
+
+Ensure all services are running before executing tests.
+
+---
+
+## Contributing
+
+Contributions are welcome! If you have ideas for improvements or new features, feel free to:
+
+1. Fork the repository.
+2. Create a new branch for your feature or bugfix.
+3. Submit a pull request.
+
+Please ensure your contributions align with the project's goals and maintain clean, modular code.
+
+---
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+---
+
+## Contact
+
+For questions, suggestions, or feedback, feel free to reach out:
+
+- **Author**: Sahil Mehdiyev
+- **GitHub**: [SahilMehdiyev](https://github.com/SahilMehdiyev)
+
+---
+
+Happy building your APIs! 🚀
+
+
+
+
