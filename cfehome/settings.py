@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "rest_framework",
     "rest_framework.authtoken",
+    "algoliasearch_django",
     "api",
     "products",
     "search",
@@ -155,3 +156,10 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+ALGOLIA = {
+  'APPLICATION_ID': '0E3ZJDX27A',
+  'API_KEY': 'e36df35134be93d915e4f172321b3c1a',
+  'INDEX': 'cfe'
+}
