@@ -1,5 +1,8 @@
 run_server:
 	poetry run python manage.py runserver
+run_algolia:
+	poetry run python manage.py algolia_reindex
+
 shell:
 	poetry run python manage.py shell
 create_superuser:
