@@ -101,12 +101,6 @@ Once the server is running, you can:
 
 ---
 
-## Testing
-
-Run the tests using Pytest:
-
-```bash
-poetry run pytest
 ```
 
 Ensure all services are running before executing tests.
