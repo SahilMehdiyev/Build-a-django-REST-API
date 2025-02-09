@@ -23,6 +23,9 @@ django-admin-interface = "^0.29.4"
 algoliasearch-django = ">=4.0,<5.0"
 algoliasearch = "^4.12.0"
 django-filter = "^24.3"
+celery = "^5.4.0"
+redis = "^5.2.1"
+django-celery-beat = "^2.7.0"
 
 
 [build-system]
