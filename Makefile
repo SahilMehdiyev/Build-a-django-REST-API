@@ -11,6 +11,9 @@ create_superuser:
 run_detail:
 	poetry run python py_client/detail.py
 
+run_test:
+	poetry run python manage.py test
+
 run_basic:
 	poetry run python py_client/basic.py	
 

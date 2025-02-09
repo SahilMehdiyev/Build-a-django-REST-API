@@ -16,7 +16,7 @@ class ProduuctListCreateAPITest(TestCase):
             email='testuser@test.com',
             password='test123'
         )
-        self.client.force_authenticate(self.user)
+        self.client.force_authenticate(user=self.user)
         self.product1 = Product.objects.create(
             user=self.user, title="Laptop", content="Powerful laptop", price=1000.00, public=True
         )
