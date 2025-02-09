@@ -1,10 +1,13 @@
 from rest_framework import generics, mixins
 from rest_framework.decorators import api_view
+from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework import filters
 from rest_framework.response import Response
 from django.shortcuts import get_list_or_404, get_object_or_404
 from api.mixins import (
     StaffEditorPermissionMixin,
     UserQuerySetMixin)
+from products.filters import ProductFilter
 from .models import Product
 from .serializers import ProductSerializer
 
@@ -15,6 +18,12 @@ class ProductListCreateAPIView(
     generics.ListCreateAPIView):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
+    filter_backends = [DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter]
+    filterset_class = ProductFilter
+    search_fields = ['title', 'content']
+    ordering_fields = ['price', 'title']
+
+    
 
     def perform_create(self, serializer):
         # serializer.save(user=self.request.user)
