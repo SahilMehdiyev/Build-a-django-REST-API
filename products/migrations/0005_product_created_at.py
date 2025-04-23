@@ -4,16 +4,17 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('products', '0004_alter_product_public'),
+        ("products", "0004_alter_product_public"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='product',
-            name='created_at',
-            field=models.DateTimeField(auto_now_add=True, default='2024-01-01 00:00:00'),
+            model_name="product",
+            name="created_at",
+            field=models.DateTimeField(
+                auto_now_add=True, default="2024-01-01 00:00:00"
+            ),
             preserve_default=False,
         ),
     ]

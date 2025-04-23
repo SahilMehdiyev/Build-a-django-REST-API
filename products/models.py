@@ -21,7 +21,7 @@ class ProductQuerySet(models.QuerySet):
 class ProductManager(models.Manager):
     def get_queryset(self, *args, **kwargs):
         return ProductQuerySet(self.model, using=self._db)
- 
+
     def search(self, query, user=None):
         return self.get_queryset().search(query, user=user)
 

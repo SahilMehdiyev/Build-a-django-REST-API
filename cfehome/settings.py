@@ -43,11 +43,11 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    'django_celery_beat',
+    "django_celery_beat",
     "rest_framework",
     "rest_framework.authtoken",
     "algoliasearch_django",
-    'django_filters',
+    "django_filters",
     "api",
     "products",
     "search",
@@ -56,8 +56,8 @@ INSTALLED_APPS = [
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": [
         "rest_framework.authentication.SessionAuthentication",
-         "api.authentication.TokenAuthentication",
-         "rest_framework_simplejwt.authentication.JWTAuthentication",
+        "api.authentication.TokenAuthentication",
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
     ],
     "DEFAULT_PERMISSION_CLASSES": [
         "rest_framework.permissions.IsAuthenticatedOrReadOnly"
@@ -113,10 +113,9 @@ DATABASES = {
     }
 }
 
-CELERY_BROKER_URL = 'redis://localhost:6379/0'  # Redis backend
-CELERY_ACCEPT_CONTENT = ['json']
-CELERY_TASK_SERIALIZER = 'json'
-
+CELERY_BROKER_URL = "redis://localhost:6379/0"  # Redis backend
+CELERY_ACCEPT_CONTENT = ["json"]
+CELERY_TASK_SERIALIZER = "json"
 
 
 # Password validation
@@ -167,7 +166,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
 ALGOLIA = {
-  'APPLICATION_ID': '0E3ZJDX27A',
-  'API_KEY': 'e36df35134be93d915e4f172321b3c1a',
-  'INDEX': 'cfe'
+    "APPLICATION_ID": "0E3ZJDX27A",
+    "API_KEY": "e36df35134be93d915e4f172321b3c1a",
+    "INDEX": "cfe",
 }
