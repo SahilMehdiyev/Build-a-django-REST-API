@@ -1,9 +1,11 @@
 # DRF Project
 
 ## 📚 Overview
+
 This project is built using Django and Django REST Framework (DRF) to provide a robust and scalable backend solution. The project also incorporates modern tools and configurations to streamline development, testing, and deployment processes.
 
 ## 🚀 Features
+
 - **Django REST Framework**: To handle API endpoints.
 - **Pre-commit Hooks**: Ensures code quality before commits.
 - **Relational Models**: Fully configured models for `api`, `cfhome`, `products`, `py_client`, and `search`.
@@ -15,25 +17,31 @@ This project is built using Django and Django REST Framework (DRF) to provide a 
 ---
 
 ## 🛠️ Tools and Technologies Used
+
 ### Backend Framework
+
 - **Django**: Python web framework for rapid development.
 - **Django REST Framework (DRF)**: For building RESTful APIs.
 
 ### Development Tools
+
 - **Poetry**: Dependency and environment management.
 - **Pre-commit**: Enforces code quality checks like formatting (Black) and linting (Flake8).
 
 ### Database
+
 - **SQLite3**: Lightweight relational database.
 
 ### Others
+
 - **Makefile**: For automating tasks.
 - **Python 3.12**: Latest stable Python version for development.
 
 ---
 
 ## 🏗️ Project Structure
-```plaintext
+
+````plaintext
 ├── api/                  # API-related functionality
 ├── cfhome/               # Core configuration and home app
 ├── products/             # Product-related logic
@@ -57,29 +65,34 @@ Follow these steps to set up the project locally:
    ```bash
    git clone https://github.com/SahilMehdiyev/Build-a-django-REST-API.git
    cd Build-a-django-REST-API
-   ```
+````
 
 2. **Install dependencies using Poetry**:
+
    ```bash
    poetry install
    ```
 
 3. **Set up the environment**:
+
    - Create a `.env` file in the project root directory and add necessary environment variables.
    - Refer to `.env.example` for guidance.
 
 4. **Run Docker containers**:
    Use Docker to start required services like the database:
+
    ```bash
    docker-compose up -d
    ```
 
 5. **Apply database migrations**:
+
    ```bash
    poetry run python manage.py migrate
    ```
 
 6. **Create a superuser** (optional, for accessing the Django admin interface):
+
    ```bash
    poetry run python manage.py createsuperuser
    ```
@@ -139,3 +152,4 @@ Happy building your APIs! 🚀
 
 
 
+```
